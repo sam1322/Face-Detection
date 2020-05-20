@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background: linear-gradient(to right ,rgb(255, 0, 242) ,rgb(29, 191, 255));
+  font-family: 'Times New Roman', Times, serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
