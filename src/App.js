@@ -6,6 +6,7 @@ import Clarifai from 'clarifai' ;
 import ImageLinkForm from './components/ImageLinkForm/Imagelinkform' ;
 import Rank from './components/Rank/Rank';
 import Particles from 'react-particles-js';
+import Signin from './components/Signin/Signin' ;
 import './App.css'; 
 import 'tachyons' ;
 
@@ -77,6 +78,7 @@ class App extends React.Component{
 
  
      <Navigation/>
+     <Signin/>
       <Logo/>
       <Rank/>
      <ImageLinkForm 
