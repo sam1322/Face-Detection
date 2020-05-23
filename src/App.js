@@ -7,6 +7,7 @@ import ImageLinkForm from './components/ImageLinkForm/Imagelinkform' ;
 import Rank from './components/Rank/Rank';
 import Particles from 'react-particles-js';
 import Signin from './components/Signin/Signin' ;
+import Register from './components/Register/Register' ;
 import './App.css'; 
 import 'tachyons' ;
 
@@ -33,6 +34,7 @@ class App extends React.Component{
       input: '' ,
       imageUrl:'',
       box:{} ,
+      route:'signin',
     }
    }
 
@@ -69,6 +71,11 @@ class App extends React.Component{
        .catch(err=>console.log(err)) ;
   
   }
+
+  onRouteChange = (route) => {
+    this.setState({route : route} ) ; 
+  }
+
   render(){
   return (
     <div className="App"> 
@@ -77,14 +84,22 @@ class App extends React.Component{
     />
 
  
-     <Navigation/>
-     <Signin/>
-      <Logo/>
+     <Navigation onRouteChange = {this.onRouteChange}/>
+     {this.state.route === 'home'
+     ?<div><Logo/>
       <Rank/>
      <ImageLinkForm 
      onInputChange = {this.onInputChange} 
      onButtonSubmit = {this.onButtonSubmit}/>
      <FaceDetection box = {this.state.box} imageUrl={this.state.imageUrl}/>
+     </div>
+      :  ( this.state.route === 'signin'
+      ?<Signin onRouteChange = {this.onRouteChange} />
+      :<Register onRouteChange = {this.onRouteChange} />
+
+      )
+      
+     }
      </div>
   );
   }
