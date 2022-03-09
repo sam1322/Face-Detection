@@ -19,11 +19,11 @@ const Navigation = ({onRouteChange,isSignedIn} )=>{
                         <p onClick={() => onRouteChange('signin')}
                             className='f3 link dim black underline pa3 pointer grow' >
                             Sign In
-            </p>
+                        </p>
                         <p onClick={() => onRouteChange('register')}
                             className='f3 link dim black underline pa3 pointer grow' >
                             Register
-            </p>
+                        </p>
                     </nav>
                 );
             }

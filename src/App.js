@@ -12,17 +12,17 @@ import './App.css';
 import 'tachyons' ;
 
 
-const particleOptions = {
-  particles: {
-    number : {
-      value:100 ,
-      density: {
-        enable: true,
-        value_area: 800 
-      }
-    } 
-  }
-}
+// const particleOptions = {
+//   particles: {
+//     number : {
+//       value:100 ,
+//       density: {
+//         enable: true,
+//         value_area: 800 
+//       }
+//     } 
+//   }
+// }
 
 const initialState  = {
     input: '' ,
@@ -41,11 +41,13 @@ const initialState  = {
 
 
 class App extends React.Component{
-  constructor(){
-    super() ;
-    this.state = initialState ; 
-   }
+  // constructor(){
+  //   super() ;
+  //   this.state = initialState ; 
+  //  }
    
+   state = initialState;
+
    loadUser = (data) =>{
      this.setState({user:{
       id:data.id,
@@ -54,7 +56,7 @@ class App extends React.Component{
       entries:data.entries,
       joined:data.joined,
     }
-  })
+    })
    }
 
    CalculateFaceLocation = (data) =>{
@@ -108,7 +110,7 @@ class App extends React.Component{
       
        this.displayFaceBox(this.CalculateFaceLocation(response) ) 
         })
-       .catch(err=>console.log(err)) ;
+       .catch(err=>console.log(`The error is => ${err}`)) ;
   
   }
 
@@ -126,12 +128,11 @@ class App extends React.Component{
     const {isSignedIn , imageUrl ,box ,route,user } = this.state ;
   return (
     <div className="App"> 
-    <Particles className ='particles' 
+    {/* <Particles className ='particles' 
       params ={particleOptions}
     />
-      
-    
- 
+       */}
+       
      <Navigation onRouteChange = {this.onRouteChange} isSignedIn = {isSignedIn} />
      {route === 'home'
      ?<div><Logo/>
